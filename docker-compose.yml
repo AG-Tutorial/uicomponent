@@ -1,0 +1,14 @@
+version: '3.6'
+services: 
+  angularapp:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    #environment: 
+     # hostname: host.docker.internal
+    ports:
+      - "1000:4200"
+    command: ["npm", "build",]
+    volumes: 
+      - /app/node_modules
+      - .:/app
